@@ -9,7 +9,7 @@ namespace TicTacToe
             O = new State(false, true),
             Empty = new State(false, false);
 
-        public bool Is(State other)
+        public bool Equals(State other)
         {
             return isX == other.isX && isO == other.isO;
         }
