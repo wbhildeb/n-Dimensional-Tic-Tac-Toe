@@ -10,7 +10,7 @@ class State
     const static State X, O, Empty;
 
     State();
-    bool equals(const State &other) const;
+    bool operator==(const State &other) const;
 
     private:
     State(bool isX, bool isO);

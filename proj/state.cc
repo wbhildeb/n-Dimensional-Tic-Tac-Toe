@@ -13,7 +13,7 @@ State::State()
     *this = State(false, false);
 }
 
-bool State::equals(const State &other) const
+bool State::operator==(const State &other) const
 {
     return isX == other.isX && isO == other.isO;
 }
