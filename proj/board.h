@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "state.h"
+#include "coordinate.h"
 
 
 class Board
@@ -18,7 +19,9 @@ public:
     int getNumCells() const;
     State getCellAt(int) const;
 
-    void setCell(State &, int);
+    void setCell(const State &, int);
+    void setCell(const State &, const Coordinate &);
+
 
 private:
     int pow(int baseVal, int exponent) const;

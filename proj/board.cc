@@ -23,11 +23,22 @@ int Board::getSize() const { return dimension; }
 int Board::getNumCells() const { return cells.size(); }
 State Board::getCellAt(int i) const { return cells.at(i); }
 
-void Board::setCell(State &state, int i)
+void Board::setCell(const State &state, int i)
 {
     cells[i] = state;
 }
 
+void Board::setCell(const State &state, const Coordinate &coord)
+{
+    int index = 0;
+    for (int i = 0; i < coord.dimension(); ++i)
+    {
+        if (coord.valueAt(i) >= size) throw "TODO";
+        index += pow(dimension, i) * coord.valueAt(i);
+    }
+
+    setCell(state, index);
+}
 
 // protected
 
